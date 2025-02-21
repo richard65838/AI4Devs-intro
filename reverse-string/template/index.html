@@ -1,11 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reverse String</title>    
+    <title>Inversor de Texto</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<script src="script.js"></script>
+    <header>
+        <h1>Inversor de Texto <span role="img" aria-label="invertido">🔄</span></h1>
+    </header>
+
+    <main>
+        <section class="input-container">
+            <label for="input-text">Introduce un texto:</label>
+            <input type="text" id="input-text" placeholder="Escribe aquí..." oninput="actualizarResultado()" />
+            <button id="invertir-btn" style="display: none;" onclick="invertirTexto()">Invertir ✨</button>
+        </section>
+        
+        <section class="resultado-container">
+            <p><strong>Resultado:</strong></p>
+            <p id="resultado" class="resultado"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>Hecho con ❤️ por tu app de texto invertido.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
