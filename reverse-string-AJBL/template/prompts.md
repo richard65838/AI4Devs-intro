@@ -1,4 +1,4 @@
-# Prompt 1 en Chat GPT (resolucón básica)
+# Prompt 1 en Chat GPT (resolución básica)
 
 Crea el codigo de una app web en fichero script.js que resuelva el siguiente problema:
 
@@ -6,7 +6,7 @@ Crea el codigo de una app web en fichero script.js que resuelva el siguiente pro
 - Ejemplo: si introduzco AI4Devs devuelve sveD4IA.
 - Te adjunto el fichero indice index.html como semilla.
 
-# Prompt 2 en Chat GPT (resolucón bonus)
+# Prompt 2 en Chat GPT (resolución bonus)
 
 Quiero mejorar la funcionalidad:
 
