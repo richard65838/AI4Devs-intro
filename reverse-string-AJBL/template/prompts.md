@@ -20,3 +20,7 @@ Mejora la UX/UI:
 - Utiliza html semántico en el fichero `index.html`
 - Utiliza un diseño responsive así como colores en los botones o algún emoji junto al texto del botón para que la app tenga estilo usable y fresco para el usuario en un nuevo fichero `styles.css` dentro del fichero `ìndex.html`.
 - Adapta los cambios de la UX/UI al fichero `script.js`.
+
+# Resultado final: 
+
+Visita mi resultado final: [reversed-string-site](https://ia4devs-reversed-string.netlify.app/)
