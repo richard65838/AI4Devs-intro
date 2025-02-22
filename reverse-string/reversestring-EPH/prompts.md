@@ -25,3 +25,8 @@ I want you to use this HTML file as a base:
 And add all the necessary JavaScript code to the “script.js” file.
 
 I would also like you to use a nice and friendly interface, using a CSS library like Tailwindcss.
+
+---
+
+Ok, thank you, looks nice.
+Now, to make it more interesting I want it to allow to reverse the text only when at least 3 characters have been entered. If there are not yet 3 characters entered and the user press the button, it should display in the interface a text warning to the user.
