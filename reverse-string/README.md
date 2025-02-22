@@ -26,3 +26,21 @@ Para entregar, haz una pull request que incluya una carpeta copiada de template,
 
 ¡Éxitos!
 
+# Recursos adicionales...
+
+To carry out this first activity and it is the first time that you are faced with this type of development requests in programming or it has been a while since you have worked under this type of modality, it would be good if you do not get discouraged or stressed, review these concepts since that is how it was my turn... greetings and strength!
+
+I had to review a little about how to start with the first steps with collaborative work with GitHub:
+Keywords and some reference links.
+"forks, Pull request, clone, bash, fork, checkout, add, commit"
+
+* GitHub Pull Request in 100 Seconds - Git a FREE sticker 🔥
+<https://www.youtube.com/watch?v=8lGpZkjnkt4
+
+* Aprende a clonar un repositorio de GitHub con el IDE de Visual Studio y Visual Studio Code: <https://www.youtube.com/watch?v=xbQV54gUhZE
+
+* ¿Qué es un PULL REQUEST en GITHUB y como hacer tu primera Pull Request? (Curso de Github) #7
+<https://www.youtube.com/watch?v=ZmrP2G9FSzw&list=PLaN1b7vXPDt6NJNe9x9y17TlEhx9rrc-d&index=8
+
+* How to create a pull request in 4 min | GitHub for Beginners 2024
+<https://www.youtube.com/watch?v=nCKdihvneS0
