@@ -24,22 +24,29 @@
         .btn {
             width: 100%;
             margin-top: 10px;
+            display: none;
         }
         #result {
             font-weight: bold;
             font-size: 18px;
             margin-top: 15px;
         }
+        #disclaimer {
+            font-size: 14px;
+            color: gray;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h4>Reverse String Tool</h4>
-        <input type="text" id="inputText" placeholder="Enter text here" class="input-field">
-        <button class="btn waves-effect waves-light blue" onclick="reverseString()">
+        <input type="text" id="inputText" placeholder="Enter text here" class="input-field" oninput="toggleButtons()">
+        <p id="disclaimer">Please enter at least 3 characters to enable the buttons.</p>
+        <button id="reverseBtn" class="btn waves-effect waves-light blue" onclick="reverseString()">
             <i class="material-icons left">autorenew</i> Reverse
         </button>
-        <button class="btn waves-effect waves-light green" onclick="copyToClipboard()">
+        <button id="copyBtn" class="btn waves-effect waves-light green" onclick="copyToClipboard()">
             <i class="material-icons left">content_copy</i> Copy
         </button>
         <p id="result"></p>
@@ -60,6 +67,23 @@
                 }).catch(err => {
                     console.error("Error copying text: ", err);
                 });
+            }
+        }
+
+        function toggleButtons() {
+            const inputText = document.getElementById("inputText").value;
+            const reverseBtn = document.getElementById("reverseBtn");
+            const copyBtn = document.getElementById("copyBtn");
+            const disclaimer = document.getElementById("disclaimer");
+            
+            if (inputText.length >= 3) {
+                reverseBtn.style.display = "block";
+                copyBtn.style.display = "block";
+                disclaimer.style.display = "none";
+            } else {
+                reverseBtn.style.display = "none";
+                copyBtn.style.display = "none";
+                disclaimer.style.display = "block";
             }
         }
 
