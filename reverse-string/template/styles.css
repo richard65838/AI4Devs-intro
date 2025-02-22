@@ -9,11 +9,17 @@ body {
 }
 
 .container {
+    display: flex;
+    gap: 20px;
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+}
+
+.input-section, .preview-section {
+    width: 50%;
 }
 
 input {
@@ -46,4 +52,15 @@ button:hover:not(:disabled) {
 p {
     margin-top: 10px;
     font-weight: bold;
+}
+
+.preview-section {
+    border-left: 2px solid #ddd;
+    padding-left: 20px;
+    text-align: left;
+}
+
+#liveOutput {
+    font-size: 1.2em;
+    color: #333;
 }

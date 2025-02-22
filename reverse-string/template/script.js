@@ -9,3 +9,9 @@ function checkInput() {
     let button = document.getElementById("reverseButton");
     button.disabled = inputText.length < 3;
 }
+
+function liveReverse() {
+    let inputText = document.getElementById("inputText").value;
+    let reversedText = inputText.split("").reverse().join("");
+    document.getElementById("liveOutput").innerText = reversedText;
+}
