@@ -2,7 +2,7 @@
 ChatGPT 03-mini-high
 
 Prompt 01:
-Upload del reversestring-example a chatgpt
+Upload del reversestring-example.png a chatgpt
 Crea una **página web con lógica en javascript que invierta el orden de una cadena de texto**.  Utilizar el image cargada como template.
 Ejemplo: si introduzco AI4Devs devuelve sveD4IA. 
 Los archivos devem ser creados en separado index.html y script.js
