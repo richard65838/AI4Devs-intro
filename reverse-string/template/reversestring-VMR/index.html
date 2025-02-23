@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reverse String</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      margin: 40px;
+      color: #333;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    /* Campo de texto */
+    #inputString {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    /* Botón Reverse */
+    #reverseBtn {
+      background-color: #0d6efd; /* Azul */
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      display: none; /* Oculto por defecto */
+    }
+    #reverseBtn:hover {
+      background-color: #0b5ed7;
+    }
+
+    /* Texto invertido */
+    #output {
+      margin-bottom: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      min-height: 24px; /* Para mantener espacio aun si está vacío */
+    }
+
+    /* Botón Copy */
+    #copyBtn {
+      background-color: #6c757d; /* Gris */
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 4px;
+    }
+    #copyBtn:hover {
+      background-color: #5c636a;
+    }
+
+    /* Para situar el ícono a la derecha */
+    .icon {
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Reverse String</h1>
+    
+    <!-- Campo de entrada -->
+    <input
+      type="text"
+      id="inputString"
+      placeholder="Hello, welcome to AI4Devs"
+    />
+
+    <!-- Botón Reverse (solo se muestra si hay +3 caracteres) -->
+    <button id="reverseBtn" onclick="manualReverse()">
+      Reverse <span class="icon">🔄</span>
+    </button>
+
+    <!-- Texto invertido -->
+    <div id="output"></div>
+
+    <!-- Botón para copiar el resultado -->
+    <button id="copyBtn" onclick="copyReversed()">
+      Copy <span class="icon">📋</span>
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
