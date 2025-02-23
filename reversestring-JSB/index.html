@@ -68,40 +68,5 @@
       <p id="outputText"></p>
       <button id="copyBtn" onclick="copyText()">Copy</button>
     </div>
-    <script>
-      function handleInput() {
-        const inputText = document.getElementById("inputText").value;
-        const reverseBtn = document.getElementById("reverseBtn");
-        const realTimeToggle = document.getElementById("realTimeToggle");
-        if (realTimeToggle.checked) {
-          document.getElementById("outputText").innerText = inputText
-            .split("")
-            .reverse()
-            .join("");
-          reverseBtn.disabled = true;
-        } else {
-          reverseBtn.disabled = inputText.length < 3;
-        }
-      }
-
-      function reverseText() {
-        const inputText = document.getElementById("inputText").value;
-        document.getElementById("outputText").innerText = inputText
-          .split("")
-          .reverse()
-          .join("");
-      }
-
-      function copyText() {
-        const outputText = document.getElementById("outputText").innerText;
-        navigator.clipboard.writeText(outputText).then(() => {
-          alert("Copied to clipboard!");
-        });
-      }
-
-      function toggleRealTime() {
-        handleInput();
-      }
-    </script>
   </body>
 </html>
