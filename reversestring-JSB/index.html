@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse String</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: #f8f9fa;
+      }
+      .container {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      input,
+      button,
+      label {
+        margin-top: 10px;
+      }
+      button {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      #reverseBtn {
+        background-color: blue;
+        color: white;
+      }
+      #reverseBtn:disabled {
+        background-color: gray;
+        cursor: not-allowed;
+      }
+      #copyBtn {
+        background-color: darkgray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Reverse String</h1>
+      <input
+        type="text"
+        id="inputText"
+        placeholder="Enter text..."
+        oninput="handleInput()"
+      />
+      <br />
+      <label>
+        <input
+          type="checkbox"
+          id="realTimeToggle"
+          onchange="toggleRealTime()"
+        />
+        Enable real-time conversion
+      </label>
+      <br />
+      <button id="reverseBtn" onclick="reverseText()" disabled>Reverse</button>
+      <p id="outputText"></p>
+      <button id="copyBtn" onclick="copyText()">Copy</button>
+    </div>
+    <script>
+      function handleInput() {
+        const inputText = document.getElementById("inputText").value;
+        const reverseBtn = document.getElementById("reverseBtn");
+        const realTimeToggle = document.getElementById("realTimeToggle");
+        if (realTimeToggle.checked) {
+          document.getElementById("outputText").innerText = inputText
+            .split("")
+            .reverse()
+            .join("");
+          reverseBtn.disabled = true;
+        } else {
+          reverseBtn.disabled = inputText.length < 3;
+        }
+      }
+
+      function reverseText() {
+        const inputText = document.getElementById("inputText").value;
+        document.getElementById("outputText").innerText = inputText
+          .split("")
+          .reverse()
+          .join("");
+      }
+
+      function copyText() {
+        const outputText = document.getElementById("outputText").innerText;
+        navigator.clipboard.writeText(outputText).then(() => {
+          alert("Copied to clipboard!");
+        });
+      }
+
+      function toggleRealTime() {
+        handleInput();
+      }
+    </script>
+  </body>
+</html>
