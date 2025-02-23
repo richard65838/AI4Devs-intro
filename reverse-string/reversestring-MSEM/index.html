@@ -1,0 +1,107 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse String</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Reverse String</h1>
+        <input type="text" id="inputText" placeholder="Introduce un texto...">
+        <div class="button-group">
+            <button id="reverseButton">Reverse</button>
+            <button id="autoButton">Automático</button>
+            <button id="copyButton">Copiar</button>
+        </div>
+        <p id="result"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- style.css -->
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#reverseButton {
+    background-color: #007bff;
+    color: white;
+}
+
+#reverseButton:hover {
+    background-color: #0056b3;
+}
+
+#autoButton {
+    background-color: #28a745;
+    color: white;
+}
+
+#autoButton:hover {
+    background-color: #1e7e34;
+}
+
+#copyButton {
+    background-color: #ffc107;
+    color: black;
+}
+
+#copyButton:hover {
+    background-color: #e0a800;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #555;
+}
+</style>
