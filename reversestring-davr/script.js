@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const outputParagraph = document.getElementById("output");
 
     reverseButton.addEventListener("click", () => {
-        const text = inputField.value;
-        outputParagraph.textContent = text.split("").reverse().join("");
+        outputParagraph.textContent = inputField.value.split("").reverse().join("");
     });
 });
