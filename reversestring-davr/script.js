@@ -1,9 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     const inputField = document.getElementById("textInput");
-    const reverseButton = document.getElementById("reverseButton");
-    const outputParagraph = document.getElementById("output");
+    const outputSpan = document.getElementById("output");
 
-    reverseButton.addEventListener("click", () => {
-        outputParagraph.textContent = inputField.value.split("").reverse().join("");
+    inputField.addEventListener("input", () => {
+        outputSpan.textContent = inputField.value.split("").reverse().join("");
     });
 });
