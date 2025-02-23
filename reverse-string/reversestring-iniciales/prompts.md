@@ -19,3 +19,6 @@ Los estilos css son los siguientes:
 - Solo el título tiene que estar en negrita y ser h1.
 - El texto del boton tiene que esta en negrita.
 
+Además: 
+- El botón de Reverse solo debe aparecer cuando haya más de 3 letras.
+- El cálculo no será necesrio pulsar el botón, también se hará cuando haya más de 3 letras. 

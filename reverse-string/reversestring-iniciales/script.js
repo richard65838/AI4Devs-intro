@@ -4,11 +4,23 @@ document.addEventListener("DOMContentLoaded", function () {
     const outputText = document.getElementById("outputText");
     const copyBtn = document.getElementById("copyBtn");
 
-    reverseBtn.addEventListener("click", function () {
-        const reversed = inputText.value.split("").reverse().join("");
-        outputText.textContent = reversed;
-        copyBtn.style.display = reversed ? "block" : "none";
-    });
+    function updateReverse() {
+        const text = inputText.value;
+        if (text.length > 3) {
+            const reversed = text.split("").reverse().join("");
+            outputText.textContent = reversed;
+            reverseBtn.style.display = "flex";
+            copyBtn.style.display = "flex";
+        } else {
+            outputText.textContent = "";
+            reverseBtn.style.display = "none";
+            copyBtn.style.display = "none";
+        }
+    }
+
+    inputText.addEventListener("input", updateReverse);
+
+    reverseBtn.addEventListener("click", updateReverse);
 
     copyBtn.addEventListener("click", function () {
         navigator.clipboard.writeText(outputText.textContent).then(() => {
