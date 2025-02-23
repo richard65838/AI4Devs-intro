@@ -1,11 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reverse String</title>    
+    <title>Reverse String</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: left;
+            margin: 50px;
+        }
+        h1 {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        input {
+            font-size: 1.2em;
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        button {
+            font-size: 1.2em;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 10px 0;
+            border-radius: 10px;
+        }
+        .reverse-btn {
+            background-color: blue;
+            color: white;
+            display: none;
+        }
+        .copy-btn {
+            background-color: gray;
+            color: white;
+        }
+        #output {
+            font-size: 1.2em;
+            margin: 20px 0;
+            word-break: break-word;
+        }
+    </style>
 </head>
 <body>
-<script src="script.js"></script>
+    <h1>Reverse String</h1>
+    <input type="text" id="inputText" placeholder="Introduce texto aquí">
+    <button class="reverse-btn" id="reverseBtn">
+        Reverse 🔄
+    </button>
+    <p id="output"></p>
+    <button class="copy-btn" id="copyBtn">
+        Copy 📋
+    </button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const inputField = document.getElementById("inputText");
+            const reverseBtn = document.getElementById("reverseBtn");
+            const copyBtn = document.getElementById("copyBtn");
+            const outputText = document.getElementById("output");
+
+            inputField.addEventListener("input", function () {
+                if (inputField.value.length > 3) {
+                    reverseBtn.style.display = "block";
+                } else {
+                    reverseBtn.style.display = "none";
+                }
+                reverseString(); // Actualiza el texto invertido en tiempo real
+            });
+
+            reverseBtn.addEventListener("click", reverseString);
+            copyBtn.addEventListener("click", copyToClipboard);
+        });
+
+        function reverseString() {
+            let input = document.getElementById("inputText").value;
+            let reversed = input.split("").reverse().join("");
+            document.getElementById("output").textContent = reversed;
+        }
+
+        function copyToClipboard() {
+            let outputText = document.getElementById("output").textContent;
+            if (outputText.trim() !== "") {
+                navigator.clipboard.writeText(outputText).then(() => {
+                    alert("Texto copiado al portapapeles");
+                }).catch(err => {
+                    console.error("Error al copiar: ", err);
+                    alert("Error al copiar el texto");
+                });
+            } else {
+                alert("No hay texto para copiar");
+            }
+        }
+    </script>
 </body>
 </html>
