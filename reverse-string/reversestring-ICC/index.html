@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse String</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .btn {
+            width: 100%;
+            margin-top: 10px;
+            display: none;
+        }
+        #result {
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 15px;
+        }
+        #disclaimer {
+            font-size: 14px;
+            color: gray;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h4>Reverse String Tool</h4>
+        <input type="text" id="inputText" placeholder="Enter text here" class="input-field" oninput="toggleButtons()">
+        <p id="disclaimer">Please enter at least 3 characters to enable the buttons.</p>
+        <button id="reverseBtn" class="btn waves-effect waves-light blue" onclick="reverseString()">
+            <i class="material-icons left">autorenew</i> Reverse
+        </button>
+        <button id="copyBtn" class="btn waves-effect waves-light green" onclick="copyToClipboard()">
+            <i class="material-icons left">content_copy</i> Copy
+        </button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function reverseString() {
+            const inputText = document.getElementById("inputText").value;
+            const reversedText = inputText.split('').reverse().join('');
+            document.getElementById("result").innerText = reversedText;
+        }
+
+        function copyToClipboard() {
+            const resultText = document.getElementById("result").innerText;
+            if (resultText) {
+                navigator.clipboard.writeText(resultText).then(() => {
+                    M.toast({html: "Copied to clipboard!", classes: "green"});
+                }).catch(err => {
+                    console.error("Error copying text: ", err);
+                });
+            }
+        }
+
+        function toggleButtons() {
+            const inputText = document.getElementById("inputText").value;
+            const reverseBtn = document.getElementById("reverseBtn");
+            const copyBtn = document.getElementById("copyBtn");
+            const disclaimer = document.getElementById("disclaimer");
+            
+            if (inputText.length >= 3) {
+                reverseBtn.style.display = "block";
+                copyBtn.style.display = "block";
+                disclaimer.style.display = "none";
+            } else {
+                reverseBtn.style.display = "none";
+                copyBtn.style.display = "none";
+                disclaimer.style.display = "block";
+            }
+        }
+
+        // Test cases
+        function testReverseString() {
+            console.assert(reverseText("hello") === "olleh", 'Test Case 1 Failed');
+            console.assert(reverseText("world") === "dlrow", 'Test Case 2 Failed');
+            console.assert(reverseText("12345") === "54321", 'Test Case 3 Failed');
+            console.assert(reverseText("") === "", 'Test Case 4 Failed');
+            console.assert(reverseText("racecar") === "racecar", 'Test Case 5 Failed');
+            console.assert(reverseText("A man a plan a canal Panama") === "amanaP lanac a nalp a nam A", 'Test Case 6 Failed');
+            console.log("All test cases passed!");
+        }
+
+        function reverseText(text) {
+            return text.split('').reverse().join('');
+        }
+
+        testReverseString();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

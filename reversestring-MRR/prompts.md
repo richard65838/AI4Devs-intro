@@ -1,0 +1,4 @@
+AI Claude 3.5 Sonnet
+- Necesito crear una pagina en html y con funcionalidad en javascript donde contenga un input para administrar un texto y por medio de javacript crear una funcion donde me devuelva invertido el orden de la cadena de texto, por ejemplo introduzco AI4Devs devuelve sveD4IA, debes de validar el input para que no intente aplicar el ordenamiento a cadenas vacias o nulas o indefinidas, cada texto que se ponga crea una tabla con un diseño agradable la primera columna el texto origanl y la segunda columna el texto con el nuevo orden, debes de separar tanto el html y el javacript en archivos separados index.html y script.js
+
+- Puedes agregar la siguiente validación "El botón debe aparecer cuando haya texto suficiente, más de 3 letras" y agrega un input para que se muestre en tiempo real el cambio de la cadena
