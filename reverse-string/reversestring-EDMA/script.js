@@ -1,24 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Manejador de eventos principal
     const inputField = document.getElementById("textInput");
     const reverseButton = document.getElementById("reverseButton");
     const resultDisplay = document.getElementById("result");
 
+    // Ocultar el botón al inicio
+    reverseButton.style.display = "none";
+
+    // Evento para detectar cambios en el input
+    inputField.addEventListener("input", function () {
+        if (inputField.value.trim().length > 3) {
+            reverseButton.style.display = "block";
+        } else {
+            reverseButton.style.display = "none";
+        }
+    });
+
+    // Evento para invertir la cadena al hacer clic en el botón
     reverseButton.addEventListener("click", function () {
         const text = inputField.value.trim();
-        if (!isValidInput(text)) {
+        if (text === "") {
             showError("Por favor, ingresa un texto válido.");
             return;
         }
         showResult(reverseString(text));
     });
 
-    // Valida la entrada del usuario
-    function isValidInput(text) {
-        return text.length > 0;
-    }
-
-    // Invierte la cadena de texto (función pura)
+    // Función pura para invertir la cadena de texto
     function reverseString(str) {
         return str.split("").reverse().join("");
     }
