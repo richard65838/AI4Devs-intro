@@ -8,12 +8,22 @@ const inputText = document.getElementById('inputText');
 const invertBtn = document.getElementById('invertBtn');
 const result = document.getElementById('result');
 
-// Evento al hacer clic en el botón
-invertBtn.addEventListener('click', () => {
+// Actualiza el resultado en tiempo real
+inputText.addEventListener('input', () => {
   const text = inputText.value;
-  if (text.trim() !== '') {
+  
+  // Mostrar el botón solo si hay más de 3 caracteres
+  if (text.length > 3) {
+    invertBtn.classList.remove('hidden');
     result.textContent = reverseString(text);
   } else {
-    result.textContent = 'Por favor, ingresa una cadena de texto.';
+    invertBtn.classList.add('hidden');
+    result.textContent = text ? 'Ingresa al menos 4 letras.' : '';
   }
+});
+
+// Opcional: al hacer clic en el botón, se refresca el resultado (aunque ya se muestra en tiempo real)
+invertBtn.addEventListener('click', () => {
+  const text = inputText.value;
+  result.textContent = reverseString(text);
 });
