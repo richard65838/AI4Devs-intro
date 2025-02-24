@@ -33,6 +33,8 @@
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
+            display: none;
+            transition: opacity 0.3s ease;
         }
         button:hover {
             background-color: #45a049;
@@ -42,6 +44,7 @@
             padding: 10px;
             font-size: 18px;
             color: #333;
+            min-height: 30px;
         }
     </style>
 </head>
@@ -49,7 +52,7 @@
     <div class="container">
         <h1>Invertir Texto</h1>
         <input type="text" id="textoInput" placeholder="Ingresa el texto a invertir">
-        <button onclick="invertirTexto()">Invertir</button>
+        <button id="invertirBtn">Invertir</button>
         <div id="resultado"></div>
     </div>
 
