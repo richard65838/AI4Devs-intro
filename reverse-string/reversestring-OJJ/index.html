@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse String</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 50px;
+      }
+      input {
+        padding: 8px;
+        width: 250px;
+        font-size: 16px;
+      }
+      button {
+        padding: 8px 12px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      p {
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+      #reverseButton {
+        display: none; /* Ahora el botón empieza oculto */
+      }
+      #result3 {
+        visibility: hidden; /* Inicialmente oculto */
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Reversor de Texto</h2>
+
+    <!-- Bloque 1: Funcionalidad original -->
+    <input type="text" id="textInput" placeholder="Escribe algo aquí..." />
+    <button onclick="reverseString()">Revertir</button>
+    <p id="result"></p>
+
+    <hr />
+
+    <!-- Bloque 2: Funcionalidad mejorada -->
+    <input
+      type="text"
+      id="textInput2"
+      placeholder="Escribe algo aquí..."
+      oninput="toggleButton()"
+    />
+    <button id="reverseButton" onclick="reverseStringEnhanced()">
+      Revertir
+    </button>
+    <p id="result2"></p>
+
+    <hr />
+
+    <!-- Bloque 3: Reverse en tiempo real con restricción de 4 caracteres -->
+    <input
+      type="text"
+      id="textInput3"
+      placeholder="Escribe algo aquí..."
+      oninput="reverseInRealTime()"
+    />
+    <p id="result3"></p>
+
+    <script src="script.js"></script>
+  </body>
+</html>
