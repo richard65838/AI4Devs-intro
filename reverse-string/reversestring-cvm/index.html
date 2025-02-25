@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse String</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        input {
+            padding: 10px;
+            width: 80%;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+        .btn-reverse {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn-copy {
+            background-color: #28a745;
+            color: white;
+        }
+        p {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Reverse String</h1>
+        <input type="text" id="input-text" placeholder="Enter text to reverse">
+        <button id="reverse-btn" class="btn-reverse"><i class="fas fa-sync-alt"></i> Reverse</button>
+        <p id="result-text"></p>
+        <button id="copy-btn" class="btn-copy"><i class="fas fa-copy"></i> Copy</button>
+        <p id="error-text" class="error"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reverse String - Yoberty Alej Garcia (Dark/Light Mode)</title>
+  <style>
+    /* 
+      Variables por defecto (Dark Mode)
+      Inspiradas en la paleta Tailwind. 
+    */
+    :root {
+      --bg-color: #111827;       /* Gris muy oscuro (bg-gray-900) */
+      --text-color: #f9fafb;     /* Gris claro (text-gray-50) */
+      --border-color: #374151;   /* Gris (border-gray-700) */
+      --primary-blue: #3b82f6;   /* Azul principal (bg-blue-500) */
+      --primary-blue-hover: #2563eb; /* Hover (bg-blue-600) */
+      --font-sans: -apple-system, BlinkMacSystemFont, 
+                   "Segoe UI", Roboto, Helvetica, Arial, 
+                   sans-serif, "Apple Color Emoji", 
+                   "Segoe UI Emoji", "Segoe UI Symbol";
+    }
+
+    /* 
+      Clase para Light Mode: 
+      Sobrescribe las variables por defecto.
+    */
+    .light-mode {
+      --bg-color: #f9fafb;       /* Gris muy claro (bg-gray-50) */
+      --text-color: #111827;     /* Gris oscuro (text-gray-900) */
+      --border-color: #e2e8f0;   /* Gris claro (border-gray-200) */
+    }
+
+    /* 
+      Ajustes para ocupar toda la pantalla y usar flexbox 
+      para colocar el footer al final.
+    */
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      font-family: var(--font-sans);
+      transition: background-color 0.3s, color 0.3s; /* Animación al cambiar de modo */
+    }
+
+    /* 
+      Contenedor que crece (flex: 1) para empujar el footer 
+      hacia el fondo de la página/ventana.
+    */
+    .content {
+      flex: 1; 
+      display: flex;
+      flex-direction: column; 
+      align-items: center; 
+    }
+
+    /* Contenedor principal, similar a max-w-xl */
+    .container {
+      max-width: 42rem; /* ~672px */
+      width: 100%;
+      box-sizing: border-box;
+      padding: 2rem 1rem;
+    }
+
+    h1 {
+      font-size: 1.875rem;  /* ~ text-3xl */
+      font-weight: 700;     /* font-bold */
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    /* Sección para la barra de opciones (checkbox) */
+    .options {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      margin-bottom: 1rem;
+    }
+    .options label {
+      margin-left: 0.5rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Label e input en bloque */
+    .field-group {
+      margin-bottom: 1rem;
+    }
+    .field-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    /* Contenedor para colocar input y botón en la misma línea */
+    .input-container {
+      display: flex;
+      align-items: center;
+    }
+    .input-container input {
+      flex: 1;                /* Para que el input ocupe todo el espacio disponible */
+      margin-right: 0.5rem;   /* Separación entre el input y el botón */
+    }
+
+    /* Input de texto */
+    #inputString {
+      background-color: #1f2937; /* Gray-800 para dark */
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+      border-radius: 0.375rem;   /* rounded-md */
+      padding: 0.5rem 1rem;
+      outline: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Botón */
+    #reverseButton {
+      background-color: var(--primary-blue);
+      color: #fff;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 0.375rem; /* rounded-md */
+      cursor: pointer;
+      margin-top: 0;          /* Eliminamos margen superior para que se alinee con el input */
+      margin-bottom: 0;
+      transition: background-color 0.2s;
+      display: none;          /* Por defecto oculto (hasta que el texto sea > 3) */
+    }
+    #reverseButton:hover {
+      background-color: var(--primary-blue-hover);
+    }
+
+    /* Resultados */
+    .result-title {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    .result-text {
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    /* Ajustes para Light Mode:
+       Notar que input de texto en light mode debe ser clarito.
+       Esto se ajusta automáticamente con la clase .light-mode 
+       sobre body porque cambiamos --bg-color y --text-color.
+    */
+    .light-mode #inputString {
+      background-color: #f3f4f6; /* Gray-100 */
+      color: #111827;           /* Gray-900 */
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    footer a {
+      color: var(--primary-blue);
+      text-decoration: none;
+      transition: text-decoration 0.2s;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Contenido principal que se expande para empujar el footer al fondo -->
+  <div class="content">
+    <div class="container">
+      <!-- Opciones (checkbox para cambiar de modo) -->
+      <div class="options">
+        <input type="checkbox" id="modeSwitch" />
+        <label for="modeSwitch">Light Mode</label>
+      </div>
+
+      <!-- El título con ID para poder cambiar el texto dinámicamente -->
+      <h1 id="modeHeading">Reverse String - Yoberty Alej Garcia (Dark Mode 🌙)</h1>
+      
+      <!-- Campo de texto y botón en la misma línea -->
+      <div class="field-group">
+        <label for="inputString">Introduce tu texto:</label>
+        <div class="input-container">
+          <input 
+            type="text" 
+            id="inputString" 
+            placeholder="Ingresa tu texto a invertir" 
+            aria-label="Texto a invertir"
+          />
+          <button id="reverseButton">Invertir</button>
+        </div>
+      </div>
+      
+      <!-- Sección para la inversión en tiempo real -->
+      <div class="field-group">
+        <div class="result-title">Inversión en tiempo real:</div>
+        <p id="realTimeResult" class="result-text"></p>
+      </div>
+      
+      <!-- Sección para la inversión al hacer clic en el botón -->
+      <div class="field-group">
+        <div class="result-title">Inversión con botón:</div>
+        <p id="buttonClickResult" class="result-text">Aquí aparecerá el contenido una vez pulses el botón</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer pegado al fondo (gracias al flex layout) -->
+  <footer>
+    Desarrollado por 
+    <a href="https://www.linkedin.com/in/yobertyalej" target="_blank">@YobertyAlej</a>
+  </footer>
+
+  <!-- Script externo -->
+  <script src="script.js"></script>
+</body>
+</html>

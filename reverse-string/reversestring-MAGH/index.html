@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse String</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px;
+}
+.container {
+    text-align: left;
+    max-width: 400px;
+    width: 100%;
+}
+h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+input {
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: fit-content;
+}
+#reverseBtn {
+    background-color: #007bff;
+    color: white;
+    display: none;
+}
+#copyBtn {
+    background-color: #6c757d;
+    color: white;
+    margin-top: 10px;
+}
+.icon {
+    font-size: 18px;
+}
+.hidden {
+    display: none;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Reverse String</h1>
+        <input type="text" id="userInput" placeholder="Hello, welcome to AI4Devs">
+        <button id="reverseBtn" class="hidden">Reverse <span class="icon">🔄</span></button>
+        <p id="output"></p>
+        <button id="copyBtn">Copy <span class="icon">📋</span></button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

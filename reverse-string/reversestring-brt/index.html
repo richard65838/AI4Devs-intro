@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse String BRT</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #e7e9ea;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #15202b;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        input {
+            background-color: #253341;
+            border: 1px solid #38444d;
+            border-radius: 12px;
+            color: #e7e9ea;
+            padding: 10px;
+            width: calc(100% - 24px);
+            margin-bottom: 12px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        button {
+            background-color: #1da1f2;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            font-size: 16px;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #0d8de0;
+        }
+
+        #clearBtn {
+            background-color: #657786;
+        }
+
+        #clearBtn:hover {
+            background-color: #556571;
+        }
+
+        .tweet {
+            margin-top: 20px;
+            background-color: #192734;
+            padding: 15px;
+            border-radius: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            word-wrap: break-word;
+            white-space: pre-wrap;
+            font-size: 16px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input id="inputString" type="text" placeholder="Enter text to reverse" maxlength="255">
+        <button id="reverseBtn">Reverse</button>
+        <button id="clearBtn">Limpiar</button>
+        <div id="result" class="tweet" style="display:none;"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
