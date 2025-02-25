@@ -1,0 +1,50 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+  font-weight: 400;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  width: 100%;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  font-size: 24px; /* Cambiado a 24px */
+  border: 2px solid #000000; /* Borde sólido negro de 2px */
+  font-family: "Atkinson Hyperlegible Mono", sans-serif;
+  font-weight: 400;
+  margin: 16px; /* Margen de 16px */
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ff69b4;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff1493;
+}
+
+p {
+  font-size: 18px;
+  margin-top: 10px;
+}
