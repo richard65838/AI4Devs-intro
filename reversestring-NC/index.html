@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReverseString</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .input-group {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+        }
+        button {
+            background: #007bff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            color: white;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .output {
+            margin-top: 20px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        button {
+            background: #007bff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            color: white;
+            display: none; /* Ocultar botón inicialmente */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>ReverseString</h1>
+        <div class="input-group">
+            <input type="text" id="inputText" placeholder="Escriba aquí el texto a invertir" oninput="handleInput()">
+            <button onclick="reverseText()" id="reverseButton">&#x21C4;</button>
+        </div>
+        <div class="output" id="outputText"></div>
+    </div>
+
+    <script>
+        function handleInput() {
+            const input = document.getElementById("inputText");
+            const button = document.getElementById("reverseButton");
+            
+            // Mostrar/ocultar botón según longitud
+            button.style.display = input.value.length > 3 ? "block" : "none";
+            
+            // Invertir texto automáticamente
+            reverseText();
+        }
+
+        function reverseText() {
+            const input = document.getElementById("inputText").value;
+            const reversed = input.split("").reverse().join("");
+            document.getElementById("outputText").textContent = reversed;
+        }
+    </script>
+</body>
+</html>
+
