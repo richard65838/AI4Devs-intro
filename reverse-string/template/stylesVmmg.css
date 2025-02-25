@@ -1,0 +1,93 @@
+/* Usamos la fuente Montserrat para todo */
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Título con font-weight 600, aumentando el margen inferior para mayor espacio */
+h1 {
+  margin-top: 50px;
+  margin-bottom: 40px; /* Espacio mayor entre título y elementos */
+  color: #007bff;
+  font-weight: 600;
+}
+
+/* Contenedor principal con elementos en columna y centrados */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Input con texto más grande, borde redondeado, 40px de alto y 80px de ancho */
+input[type="text"] {
+  font-weight: 300;
+  font-size: 1.2rem; /* Aumentamos el tamaño de tipografía */
+  width: 900px;
+  height: 100px;
+  padding: 0 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 15px; /* Espacio con el botón */
+}
+
+/* Estilo base de los botones */
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.1rem; /* Tamaño de letra más grande */
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px; /* Aumentamos padding para un botón más grande */
+  cursor: pointer;
+  margin-bottom: 10px; /* Pequeño margen inferior */
+}
+
+/* Ícono dentro del botón con un pequeño margen a la derecha */
+.icon {
+  margin-right: 5px;
+}
+
+/* Hover de los botones */
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Contenedor de resultados con espacio top */
+.result {
+  margin-top: 20px;
+  min-height: 24px; /* Mantiene espacio aunque no haya texto */
+  text-align: center;
+}
+
+/* Texto invertido: bold (800), tamaño de fuente mayor */
+.reversed {
+  font-weight: 800;
+  color: #333;
+  font-size: 1.4rem;
+}
+
+/* Mensaje de validación: regular (400), tamaño de fuente más grande */
+.error {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #d00; /* Rojo para indicar error */
+}
+
+/* Contenedor del botón "Copiar" al final */
+.copy-container {
+  margin-top: 20px; /* Separación con el resultado */
+}
