@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reversor de Texto Futurista</title>
+  <!-- Hoja de estilos -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Reversor de Texto</h1>
+
+    <div class="input-group">
+      <label for="originalText">Texto Original:</label>
+      <input
+        type="text"
+        id="originalText"
+        placeholder="Escribe un texto..."
+        oninput="reverseText()"
+      />
+    </div>
+
+    <div class="input-group">
+      <label for="reversedText">Texto Invertido:</label>
+      <input
+        type="text"
+        id="reversedText"
+        readonly
+        placeholder="Aquí aparecerá el texto invertido"
+      />
+      <!-- NUEVO BOTÓN PARA COPIAR AL PORTAPAPELES -->
+      <button id="copyButton" type="button">COPY</button>
+    </div>
+  </div>
+
+  <!-- Archivo JS -->
+  <script src="script.js"></script>
+</body>
+</html>
+
